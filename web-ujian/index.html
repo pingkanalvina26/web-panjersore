@@ -1026,9 +1026,11 @@
         </div>
 
         <!-- FORM -->
-        <form     
-          action="contact.php" 
-          method="POST" 
+        <form
+          id="contactForm"
+          action="mailto:panjersore@gmail.com"
+          method="POST"
+          enctype="text/plain"
           class="space-y-5"
         >
 
@@ -1044,6 +1046,7 @@
               <input 
                 type="text"
                 name="firstName"
+                required
                 placeholder="Alexandre"
                 class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
               >
@@ -1059,6 +1062,7 @@
               <input 
                 type="text"
                 name="lastName"
+                required
                 placeholder="Gobert"
                 class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
               >
@@ -1079,6 +1083,7 @@
               <input 
                 type="email"
                 name="email"
+                required
                 placeholder="hello@gmail.com"
                 class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
               >
@@ -1094,6 +1099,7 @@
               <input 
                 type="text"
                 name="phone"
+                required
                 placeholder="+62 812-3456-7890"
                 class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
               >
@@ -1111,6 +1117,7 @@
 
             <textarea 
               name="message"
+              required
               placeholder="Write your message..."
               class="w-full h-36 resize-none bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
             ></textarea>
@@ -1126,6 +1133,9 @@
           </button>
 
         </form>
+        <p class="mt-4 text-center text-sm text-orange-100">
+          Pesan akan dibuka di aplikasi email Anda untuk dikirim.
+        </p>
 
       </div>
 

@@ -56,6 +56,32 @@ subscribeForm.addEventListener("submit", function(e){
 
 });
 
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  const formData = new FormData(contactForm);
+  const fullName = [
+    formData.get("firstName"),
+    formData.get("lastName")
+  ].join(" ");
+  const subject = encodeURIComponent(`Pesan dari ${fullName}`);
+  const body = encodeURIComponent([
+    `Nama: ${fullName}`,
+    `Email: ${formData.get("email")}`,
+    `Nomor HP: ${formData.get("phone")}`,
+    "",
+    "Pesan:",
+    formData.get("message")
+  ].join("\n"));
+
+  window.location.href =
+    `mailto:panjersore@gmail.com?subject=${subject}&body=${body}`;
+
+});
+
 
 // =========================
 // CART SYSTEM
