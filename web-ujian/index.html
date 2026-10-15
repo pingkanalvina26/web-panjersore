@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panjersore.ID</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-sm">
+
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-4">
+      <img src="logo.png" class="w-14 h-14 object-cover">
+      <h1 class="text-2xl font-bold text-orange-500">
+        Panjersore.ID
+      </h1>
+    </div>
+
+    <!-- NAV -->
+    <nav class="hidden md:flex gap-10">
+
+      <a href="#home" class="nav-link relative text-gray-700 font-semibold">
+        Home
+      </a>
+
+      <a href="#products" class="nav-link relative text-gray-700 font-medium">
+        Products
+      </a>
+
+      <a href="#testi" class="nav-link relative text-gray-700 font-medium">
+        Testimonials
+      </a>
+
+      <a href="#contact" class="nav-link relative text-gray-700 font-medium">
+        Contact
+      </a>
+
+    </nav>
+
+    <!-- RIGHT -->
+      <div class="flex items-center gap-4">
+
+    <!-- SEARCH -->
+      <div class="hidden lg:flex items-center bg-gray-100 px-4 py-2 rounded-full w-60">
+    
+        <i class="fa-solid fa-magnifying-glass text-gray-400 mr-2"></i>
+
+      <input 
+        type="text"
+        placeholder="Search menu..."
+        class="bg-transparent outline-none text-sm w-full"
+      >
+
+      </div>
+
+    <!-- CART -->
+    <div 
+      id="cart-button"
+      class="relative w-12 h-12 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white cursor-pointer transition"
+    >
+
+    <i class="fas fa-shopping-cart"></i>
+
+    <span 
+      id="cart-count"
+      class="absolute -top-1 -right-1 bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center"
+    >
+      0
+    </span>
+
+  </div>
+
+  <!-- LOGIN BUTTON -->
+  <button 
+    type="button"
+    id="loginBtn"
+    class="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-full font-semibold shadow-lg transition"
+  >
+    Login
+  </button>
+  </div>
+  </header>
+
+<!-- HERO -->
+<section 
+  id="home"
+  class="h-screen bg-cover bg-center relative flex items-center"
+  style="background-image:url('ns.jpg')"
+>
+
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+
+    <div class="max-w-2xl text-white fade-up">
+
+      <p class="text-orange-300 text-lg mb-3">
+        Welcome To Panjersore.ID
+      </p>
+
+      <h1 class="text-6xl font-extrabold leading-tight">
+        Nasi Goreng <br>
+        Panjersore 🔥
+      </h1>
+
+      <p class="mt-6 text-lg text-gray-200 leading-8">
+        Nikmati nasi goreng premium dengan cita rasa khas,
+        topping melimpah dan harga yang ramah di kantong.
+      </p>
+
+      <div class="flex gap-5 mt-">
+
+        <a
+          href="#products"
+          class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-full font-semibold shadow-xl transition text-right items-center justify-between"
+        >
+          Lihat Menu
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SECTION -->
+<section class="min-h-screen flex items-center justify-center px-4 py-10">
+
+  <!-- CONTAINER -->
+  <div class="w-full max-w-6xl bg-[#ece4dc] rounded-[30px] px-6 md:px-12 py-12 relative overflow-hidden">
+
+    <!-- TITLE -->
+    <div class="text-center">
+
+      <h1 class="title-font text-3xl md:text-5xl font-bold text-[#1f1111] leading-tight">
+        Kenyang, Cepat, dan
+      </h1>
+
+      <h2 class="title-font text-3xl md:text-5xl font-bold text-[#e63946] mt-2">
+        Tepat untuk Anda
+      </h2>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="grid lg:grid-cols-3 gap-10 items-center mt-12">
+
+      <!-- LEFT -->
+      <div class="space-y-10">
+
+        <!-- ITEM -->
+        <div class="card-hover flex gap-4">
+
+          <div class="w-[4px] h-16 bg-[#e63946] rounded-full"></div>
+
+          <div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-[#1f1111]">
+              Pengiriman Hari Berikutnya
+            </h3>
+
+            <p class="text-gray-600 mt-2 leading-7 text-sm md:text-base">
+              Pesan hari ini, nikmati makanan 
+              segar dan lezat keesokan harinya.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- ITEM -->
+        <div class="card-hover flex gap-4">
+
+          <div class="w-[4px] h-16 bg-[#e63946] rounded-full"></div>
+
+          <div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-[#1f1111]">
+              Kemasan Ramah Lingkungan
+            </h3>
+
+            <p class="text-gray-600 mt-2 leading-7 text-sm md:text-base">
+              Makanan segar yang dikemas secara bertanggung 
+              jawab menggunakan bahan ramah lingkungan.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CENTER -->
+      <div class="flex flex-col items-center">
+
+        <!-- FOOD IMAGE -->
+        <img 
+          src="nsigrng.png"
+          class="w-full max-w-[320px] md:max-w-[420px] object-cover rounded-full food-shadow"
+        >
+
+        <!-- BUTTON -->
+        <button  
+          onclick="window.location.href='#products'"
+          class="btn-order mt-8 bg-[#e63946] hover:bg-[#d62839] text-white px-8 py-4 rounded-full text-lg font-semibold transition duration-300 hover:scale-105"
+        >
+          Start Your Order
+        </button>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="space-y-10 text-right">
+
+        <!-- ITEM -->
+        <div class="card-hover flex gap-4 justify-end">
+
+          <div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-[#1f1111]">
+              Pembayaran Online Aman
+            </h3>
+
+            <p class="text-gray-600 mt-2 leading-7 text-sm md:text-base">
+              Transaksi terlindungi untuk pembayaran
+              yang aman dan nyaman.
+            </p>
+
+          </div>
+
+          <div class="w-[4px] h-16 bg-[#e63946] rounded-full"></div>
+
+        </div>
+
+        <!-- ITEM -->
+        <div class="card-hover flex gap-4 justify-end">
+
+          <div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-[#1f1111]">
+              Ambil Langsung di Toko
+            </h3>
+
+            <p class="text-gray-600 mt-2 leading-7 text-sm md:text-base">
+              Ambil sendiri makanan favorit Anda
+              langsung dari toko kami.
+            </p>
+
+          </div>
+
+          <div class="w-[4px] h-16 bg-[#e63946] rounded-full"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="py-24">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- TITLE -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
+
+      <div>
+
+        <p class="text-orange-500 font-semibold text-lg">
+          Best Seller
+        </p>
+
+        <h2 class="text-5xl font-extrabold text-orange-950 mt-3">
+          Our Popular Menu
+        </h2>
+
+      </div>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- CARD -->
+      <div class="product-card relative">
+
+        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+
+          <img 
+            src="nasgor3.jpg"
+            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+          >
+
+        </div>
+
+        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+
+          <div class="text-yellow-400 text-xl mb-3">
+            ★★★★★
+          </div>
+
+          <h3 class="text-2xl font-bold text-orange-950">
+            Nasi Goreng
+          </h3>
+
+          <div class="flex justify-center gap-3 mt-4 items-center">
+
+            <span class="line-through text-gray-400 text-xl">
+              Rp25K
+            </span>
+
+            <span class="text-3xl font-bold text-orange-500">
+              Rp20K
+            </span>
+
+          </div>
+
+          <button 
+            class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
+            data-name="Nasi Goreng"
+            data-price="20000"
+            >
+             Add To Cart
+            </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="product-card relative">
+
+        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+
+          <img 
+            src="mawut.jpg"
+            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+          >
+
+        </div>
+
+        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+
+          <div class="text-yellow-400 text-xl mb-3">
+            ★★★★★
+          </div>
+
+          <h3 class="text-2xl font-bold text-orange-950">
+            Nasi Mawut
+          </h3>
+
+          <div class="flex justify-center gap-3 mt-4 items-center">
+
+            <span class="line-through text-gray-400 text-xl">
+              Rp35K
+            </span>
+
+            <span class="text-3xl font-bold text-orange-500">
+              Rp28K
+            </span>
+
+          </div>
+
+          <button 
+            class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
+            data-name="Nasi Seafood"
+            data-price="28000"
+>
+  Add To Cart
+</button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="product-card relative">
+
+        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+
+          <img 
+            src="mie.jpg"
+            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+          >
+
+        </div>
+
+        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+
+          <div class="text-yellow-400 text-xl mb-3">
+            ★★★★★
+          </div>
+
+          <h3 class="text-2xl font-bold text-orange-950">
+            Mie Goreng
+          </h3>
+
+          <div class="flex justify-center gap-3 mt-4 items-center">
+
+            <span class="line-through text-gray-400 text-xl">
+              Rp40K
+            </span>
+
+            <span class="text-3xl font-bold text-orange-500">
+              Rp32K
+            </span>
+
+          </div>
+
+          <button 
+  class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
+  data-name="Nasi Spesial"
+  data-price="32000"
+>
+  Add To Cart
+</button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="product-card relative">
+
+        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+
+          <img 
+            src="kuah.jpg"
+            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+          >
+
+        </div>
+
+        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+
+          <div class="text-yellow-400 text-xl mb-3">
+            ★★★★★
+          </div>
+
+          <h3 class="text-2xl font-bold text-orange-950">
+            Mie Kuah
+          </h3>
+
+          <div class="flex justify-center gap-3 mt-4 items-center">
+
+            <span class="line-through text-gray-400 text-xl">
+              Rp30K
+            </span>
+
+            <span class="text-3xl font-bold text-orange-500">
+              Rp24K
+            </span>
+
+          </div>
+
+         <button 
+  class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
+  data-name="Nasi Pedas"
+  data-price="24000"
+>
+  Add To Cart
+</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- PROMO SECTION -->
+<section class="relative mt-28 px-4 overflow-hidden">
+
+  <!-- BLUR BACKGROUND -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-orange-300/20 blur-3xl rounded-full"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-red-400/20 blur-3xl rounded-full"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+
+    <!-- TITLE -->
+    <div class="text-center mb-20">
+
+      <p class="uppercase tracking-[6px] text-orange-500 font-semibold text-sm">
+        Why People Love Our Nasi Goreng
+      </p>
+
+      <h2 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight mt-5">
+
+        Aroma yang Menggoda, <br>
+
+        <span class="text-orange-500">
+          Rasa yang Bikin Ketagihan
+        </span>
+
+      </h2>
+
+      <p class="max-w-2xl mx-auto text-gray-500 text-lg leading-relaxed mt-6">
+        Dibuat langsung menggunakan api besar dan bumbu pilihan,
+        menghadirkan sensasi nasi goreng premium dengan tampilan yang menggugah selera.
+      </p>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+      <!-- IMAGE -->
+      <div class="relative">
+
+        <!-- MAIN IMAGE -->
+        <div class="rounded-[40px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+
+          <img 
+            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-[650px] object-cover hover:scale-105 transition duration-700"
+            alt=""
+          >
+
+        </div>
+
+        <!-- FLOATING REVIEW -->
+        <div class="absolute bottom-6 right-6 max-w-[260px] bg-white/95 backdrop-blur-xl border border-gray-100 rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.12)] p-5">
+
+          <!-- STAR -->
+          <div class="flex items-center gap-1 text-yellow-400 text-lg">
+            ⭐ ⭐ ⭐ ⭐ ⭐
+          </div>
+
+          <!-- COMMENT -->
+          <p class="text-gray-600 text-sm leading-relaxed mt-3">
+            “Baru lihat tampilannya aja udah bikin lapar.
+            Rasanya juga smoky dan beda dari nasi goreng biasa.”
+          </p>
+
+          <!-- USER -->
+          <div class="flex items-center gap-3 mt-5">
+
+            <!-- PHOTO -->
+            <img 
+              src="https://i.pravatar.cc/100?img=12"
+              class="w-12 h-12 rounded-full object-cover"
+              alt=""
+            >
+
+            <!-- INFO -->
+            <div>
+
+              <h4 class="font-bold text-gray-900 leading-none">
+                Dika Ramadhan
+              </h4>
+
+              <p class="text-gray-400 text-sm mt-1">
+                Food Reviewer
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="space-y-7">
+
+        <!-- BOX 1 -->
+        <div class="bg-white rounded-[35px] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition duration-500">
+
+          <div class="flex items-start gap-5">
+
+            <div class="min-w-[70px] h-[70px] rounded-2xl bg-orange-500 flex items-center justify-center text-3xl text-white shadow-lg">
+              🔥
+            </div>
+
+            <div>
+
+              <h3 class="text-3xl font-black text-gray-900">
+                Fresh From Wok
+              </h3>
+
+              <p class="text-gray-500 text-lg leading-relaxed mt-3">
+                Dimasak langsung menggunakan api besar untuk menghasilkan aroma smoky khas restoran.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- BOX 2 -->
+        <div class="bg-black text-white rounded-[35px] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.2)] hover:-translate-y-2 transition duration-500">
+
+          <div class="flex items-start gap-5">
+
+            <div class="min-w-[70px] h-[70px] rounded-2xl bg-red-500 flex items-center justify-center text-3xl shadow-lg">
+              🌶
+            </div>
+
+            <div>
+
+              <h3 class="text-3xl font-black">
+                Viral Taste
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-relaxed mt-3">
+                Perpaduan rasa gurih, pedas, dan smoky yang bikin pelanggan selalu balik lagi.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- BOX 3 -->
+        <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-[35px] p-8 shadow-[0_10px_40px_rgba(255,115,0,0.3)] hover:-translate-y-2 transition duration-500 text-white">
+
+          <div class="flex items-start gap-5">
+
+            <div class="min-w-[70px] h-[70px] rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center text-3xl">
+              🍳
+            </div>
+
+            <div>
+
+              <h3 class="text-3xl font-black">
+                Visual Menggoda
+              </h3>
+
+              <p class="text-white/80 text-lg leading-relaxed mt-3">
+                Tampilan nasi goreng premium dengan topping melimpah yang langsung menarik perhatian.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TESTIMONIAL SECTION -->
+<section id="testi" class="py-28 bg-[#fff8f3] overflow-hidden relative">
+
+  <!-- BLUR BACKGROUND -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-orange-200 rounded-full blur-[120px] opacity-40"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-orange-400 rounded-full blur-[120px] opacity-30"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- TITLE -->
+    <div class="text-center mb-20">
+
+      <span class="bg-orange-100 text-orange-500 px-5 py-2 rounded-full font-semibold">
+        Customer Review
+      </span>
+
+      <h2 class="text-5xl md:text-6xl font-extrabold text-[#2b1105] mt-6 leading-tight">
+        Mereka Datang Lagi <br>
+        Karena Rasanya Beda 🔥
+      </h2>
+
+      <p class="text-gray-500 mt-6 max-w-2xl mx-auto text-lg leading-8">
+        Bukan cuma nasi goreng biasa — pelanggan kami datang kembali
+        karena rasa autentik, topping melimpah, dan suasana yang nyaman.
+      </p>
+
+    </div>
+
+    <!-- TESTIMONI -->
+    <div class="grid lg:grid-cols-3 gap-10">
+
+      <!-- CARD 1 -->
+      <div class="group relative bg-white rounded-[40px] p-8 shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition duration-500 overflow-hidden">
+
+        <!-- TOP ICON -->
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-orange-100 rounded-full"></div>
+
+        <div class="relative z-10">
+
+          <!-- PROFILE -->
+          <div class="flex items-center gap-5 mb-7">
+
+            <div class="relative">
+
+              <img 
+                src="mahasiswa.jpg"
+                class="w-20 h-20 rounded-2xl object-cover border-4 border-orange-100"
+              >
+
+              <span class="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></span>
+
+            </div>
+
+            <div>
+
+              <h3 class="text-2xl font-bold text-[#2b1105]">
+                iqbal ramadhan
+              </h3>
+
+              <p class="text-orange-500 font-medium">
+                Mahasiswa
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- REVIEW -->
+          <p class="text-gray-600 leading-9 text-lg">
+            “Awalnya cuma coba-coba, ternyata nagih 😭🔥 
+            Bumbunya berasa banget dan porsinya bikin kenyang maksimal.”
+          </p>
+
+         
+          <div class="flex items-center justify-between mt-8">
+
+            <div class="text-yellow-400 text-2xl tracking-wide">
+              ★★★★★
+            </div>
+
+            <span class="text-sm text-gray-400">
+              2 hari lalu
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="group relative bg-[#2b1105] text-white rounded-[40px] p-8 shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:-translate-y-3 transition duration-500 overflow-hidden">
+
+        <!-- GLOW -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/20 to-transparent"></div>
+
+        <div class="relative z-10">
+
+          <div class="flex items-center gap-5 mb-7">
+
+            <div class="relative">
+
+              <img 
+                src="pelajar.jpg"
+                class="w-20 h-20 rounded-2xl object-cover border-4 border-orange-300"
+              >
+
+              <span class="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></span>
+
+            </div>
+
+            <div>
+
+              <h3 class="text-2xl font-bold">
+                Sinta Aurelia
+              </h3>
+
+              <p class="text-orange-300 font-medium">
+                Pelajar
+              </p>
+
+            </div>
+
+          </div>
+
+          <p class="leading-9 text-lg text-gray-200">
+            “Tempatnya aesthetic banget 😍  
+            Cocok buat nongkrong malam sambil makan nasi goreng pedas.”
+          </p>
+
+          <div class="flex items-center justify-between mt-8">
+
+            <div class="text-yellow-400 text-2xl tracking-wide">
+              ★★★★★
+            </div>
+
+            <span class="text-sm text-gray-300">
+              1 minggu lalu
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="group relative bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-[40px] p-8 shadow-[0_15px_40px_rgba(255,115,0,0.3)] hover:-translate-y-3 transition duration-500 overflow-hidden">
+
+        <!-- SHAPE -->
+        <div class="absolute -bottom-16 -right-16 w-52 h-52 bg-white/10 rounded-full"></div>
+
+        <div class="relative z-10">
+
+          <div class="flex items-center gap-5 mb-7">
+
+            <div class="relative">
+
+              <img 
+                src="karyawan.jpg"
+                class="w-20 h-20 rounded-2xl object-cover border-4 border-white/40"
+              >
+
+              <span class="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></span>
+
+            </div>
+
+            <div>
+
+              <h3 class="text-2xl font-bold">
+                Andra Wijaya
+              </h3>
+
+              <p class="text-orange-100 font-medium">
+                Karyawan
+              </p>
+
+            </div>
+
+          </div>
+
+          <p class="leading-9 text-lg text-orange-50">
+            “Harga kaki lima tapi rasa hotel ⭐  
+            Salah satu nasi goreng terenak yang pernah aku coba.”
+          </p>
+
+          <div class="flex items-center justify-between mt-8">
+
+            <div class="text-yellow-300 text-2xl tracking-wide">
+              ★★★★★
+            </div>
+
+            <span class="text-sm text-orange-100">
+              3 hari lalu
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section 
+  id="contact" 
+  class="py-14 px-4 md:px-6 bg-[linear-gradient(rgba(120,53,15,.93),rgba(120,53,15,.93)),url('https://www.transparenttextures.com/patterns/arabesque.png')] overflow-x-hidden scroll-smooth"
+>
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- WRAPPER -->
+    <div class="grid lg:grid-cols-[280px_1fr] gap-6 items-start">
+
+      <!-- LEFT -->
+      <div class="relative">
+
+        <!-- IMAGE -->
+        <img 
+          src="nasigoreng.png"
+          class="w-[150px] absolute -top-16 left-1/2 -translate-x-1/2 drop-shadow-2xl z-10"
+        >
+
+        <!-- CARD -->
+        <div class="pt-24 bg-white/10 backdrop-blur-lg rounded-[30px] p-6 text-white border border-white/10 shadow-2xl">
+
+          <h2 class="text-2xl font-bold mb-2">
+            Contact Details
+          </h2>
+
+          <p class="text-orange-200 font-semibold mb-6">
+            Panjersore.ID
+          </p>
+
+          <div class="space-y-5 text-sm">
+
+            <div class="flex gap-3">
+              <i class="fa-solid fa-location-dot text-orange-300 mt-1"></i>
+              <p>Jember, Jawa Timur</p>
+            </div>
+
+            <div class="flex gap-3">
+              <i class="fa-solid fa-phone text-orange-300 mt-1"></i>
+              <p>0823-3786-8501</p>
+            </div>
+
+            <div class="flex gap-3">
+              <i class="fa-solid fa-envelope text-orange-300 mt-1"></i>
+              <p>panjersore@email.com</p>
+            </div>
+
+            <div class="flex gap-3">
+              <i class="fa-regular fa-clock text-orange-300 mt-1"></i>
+              <p>Mon - Sun • 5 PM - 10 PM</p>
+            </div>
+
+          </div>
+
+          <!-- DIVIDER -->
+          <div class="w-full h-[1px] bg-white/10 my-7"></div>
+
+          <!-- EXTRA -->
+          <div>
+
+            <h3 class="text-lg font-bold mb-4">
+              Kenapa Pilih Kami?
+            </h3>
+
+            <div class="space-y-4">
+
+              <!-- ITEM -->
+              <div class="flex items-center gap-4 bg-white/5 rounded-2xl p-4 border border-white/5">
+
+                <div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white text-lg">
+                  <i class="fa-solid fa-bowl-food"></i>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold">
+                    Fresh Everyday
+                  </h4>
+
+                  <p class="text-xs text-orange-100">
+                    Nasi goreng dibuat langsung saat dipesan.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- ITEM -->
+              <div class="flex items-center gap-4 bg-white/5 rounded-2xl p-4 border border-white/5">
+
+                <div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white text-lg">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold">
+                    Fast Delivery
+                  </h4>
+
+                  <p class="text-xs text-orange-100">
+                    Pengiriman cepat dan aman sampai tujuan.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- ITEM -->
+              <div class="flex items-center gap-4 bg-white/5 rounded-2xl p-4 border border-white/5">
+
+                <div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white text-lg">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold">
+                    Rating 4.9/5
+                  </h4>
+
+                  <p class="text-xs text-orange-100">
+                    Disukai ribuan pelanggan setiap hari 🔥
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-[35px] p-6 md:p-10 shadow-2xl">
+
+        <!-- TITLE -->
+        <div class="text-center text-white mb-8">
+
+          <p class="text-orange-200 text-lg">
+            Contact Us
+          </p>
+
+          <h1 class="text-4xl md:text-5xl font-bold mt-2 leading-tight">
+            Get in Touch <br>
+            With Us!
+          </h1>
+
+        </div>
+
+        <!-- FORM -->
+        <form     
+          action="contact.php" 
+          method="POST" 
+          class="space-y-5"
+        >
+
+          <!-- ROW -->
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div>
+
+              <label class="block mb-2 text-sm text-white">
+                First Name
+              </label>
+
+              <input 
+                type="text"
+                name="firstName"
+                placeholder="Alexandre"
+                class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
+              >
+
+            </div>
+
+            <div>
+
+              <label class="block mb-2 text-sm text-white">
+                Last Name
+              </label>
+
+              <input 
+                type="text"
+                name="lastName"
+                placeholder="Gobert"
+                class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- ROW -->
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <div>
+
+              <label class="block mb-2 text-sm text-white">
+                Email
+              </label>
+
+              <input 
+                type="email"
+                name="email"
+                placeholder="hello@gmail.com"
+                class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
+              >
+
+            </div>
+
+            <div>
+
+              <label class="block mb-2 text-sm text-white">
+                Phone Number
+              </label>
+
+              <input 
+                type="text"
+                name="phone"
+                placeholder="+62 812-3456-7890"
+                class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- MESSAGE -->
+          <div>
+
+            <label class="block mb-2 text-sm text-white">
+              Message
+            </label>
+
+            <textarea 
+              name="message"
+              placeholder="Write your message..."
+              class="w-full h-36 resize-none bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-orange-100 focus:border-orange-400 transition duration-300"
+            ></textarea>
+
+          </div>
+
+          <!-- BUTTON -->
+          <button 
+            type="submit"
+            class="w-full bg-orange-500 hover:bg-orange-600 py-4 rounded-2xl font-semibold text-lg text-white transition duration-300 shadow-lg hover:scale-[1.01]"
+          >
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#111111] text-white pt-14 pb-6 px-4 md:px-6 relative overflow-hidden">
+
+  <!-- BLUR -->
+  <div class="absolute top-0 left-0 w-56 h-56 bg-orange-500/10 rounded-full blur-[100px]"></div>
+  <div class="absolute bottom-0 right-0 w-56 h-56 bg-orange-600/10 rounded-full blur-[100px]"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+
+    <!-- TOP FOOTER -->
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8 pb-10 border-b border-white/10">
+
+      <!-- BRAND -->
+      <div>
+
+        <div class="flex items-center gap-3 mb-4">
+
+          <img 
+            src="logo.png" 
+            class="w-14 h-14 object-cover rounded-full border-2 border-orange-500"
+          >
+
+          <div>
+            <h2 class="text-2xl font-bold text-orange-500">
+              Panjersore.ID
+            </h2>
+
+            <p class="text-gray-400 text-sm">
+              Premium Fried Rice
+            </p>
+          </div>
+
+        </div>
+
+        <p class="text-gray-300 leading-7 text-sm">
+          Nikmati nasi goreng premium dengan cita rasa khas,
+          topping melimpah dan harga ramah di kantong 🔥
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="flex gap-3 mt-6">
+
+          <a 
+            href="mailto:panjersore@gmail.com"
+            class="w-11 h-11 rounded-full bg-[#1b1b1b] flex items-center justify-center hover:bg-orange-500 transition"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a 
+            href="https://instagram.com/panjersore.id"
+            class="w-11 h-11 rounded-full bg-[#1b1b1b] flex items-center justify-center hover:bg-orange-500 transition"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a 
+            href="https://tiktok.com/@panjersore.id"
+            class="w-11 h-11 rounded-full bg-[#1b1b1b] flex items-center justify-center hover:bg-orange-500 transition"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- MENU -->
+      <div>
+
+        <h3 class="text-xl font-bold mb-5">
+          Company
+        </h3>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+
+          <li>
+            <a href="#home" class="hover:text-orange-400 transition">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#products" class="hover:text-orange-400 transition">
+              Products
+            </a>
+          </li>
+
+          <li>
+            <a href="#testi" class="hover:text-orange-400 transition">
+              Testimonials
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" class="hover:text-orange-400 transition">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+
+        <h3 class="text-xl font-bold mb-5">
+          Contact
+        </h3>
+
+        <div class="space-y-4 text-gray-300 text-sm">
+
+          <div class="flex gap-3">
+            <i class="fa-solid fa-location-dot text-orange-500 mt-1"></i>
+            <p>Jember, Jawa Timur</p>
+          </div>
+
+          <div class="flex gap-3">
+            <i class="fa-solid fa-phone text-orange-500 mt-1"></i>
+            <p>0823-3786-8501</p>
+          </div>
+
+          <div class="flex gap-3">
+            <i class="fa-solid fa-envelope text-orange-500 mt-1"></i>
+            <p>panjersore@gmail.com</p>
+          </div>
+
+          <div class="flex gap-3">
+            <i class="fa-regular fa-clock text-orange-500 mt-1"></i>
+            <p>16.30 - 22.00 WIB</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- MAP -->
+      <div>
+
+        <h3 class="text-xl font-bold mb-5">
+          Lokasi Kami
+        </h3>
+
+        <div class="rounded-2xl overflow-hidden border border-white/10">
+
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.8766611255023!2d113.4454667!3d-8.215156999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd689611c98ae9b%3A0xc3955e16de8e39c!2sWarung%20Nasi%20Goreng%20Panjer%20Sore!5e0!3m2!1sen!2sus!4v1775659459708!5m2!1sen!2sus"
+            class="w-full h-[180px]"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="py-8 flex flex-col lg:flex-row gap-6 items-center justify-between">
+
+      <div>
+
+        <h2 class="text-2xl md:text-3xl font-bold mb-2">
+          Dapatkan Promo 🔥
+        </h2>
+
+        <p class="text-gray-400 text-sm">
+          Subscribe untuk info promo terbaru.
+        </p>
+
+      </div>
+
+      <!-- FORM -->
+      <form 
+        id="subscribeForm"
+        class="flex w-full max-w-lg bg-[#1a1a1a] border border-white/10 rounded-full overflow-hidden"
+      >
+
+        <input 
+          type="email"
+          placeholder="Masukkan email..."
+          class="flex-1 bg-transparent px-5 py-4 outline-none text-white text-sm"
+          required
+        >
+
+        <button 
+          type="submit"
+          class="bg-orange-500 hover:bg-orange-600 px-7 text-white font-semibold transition"
+        >
+          Subscribe
+        </button>
+
+      </form>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 text-sm">
+
+      <p>
+        © 2026 Panjersore.ID — All Rights Reserved
+      </p>
+
+      <div class="flex gap-5">
+
+        <a href="#" class="hover:text-orange-400 transition">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="hover:text-orange-400 transition">
+          Terms
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- OVERLAY -->
+<div 
+  id="checkout-overlay"
+  class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-[999]"
+></div>
+
+<!-- CHECKOUT MODAL -->
+<div 
+  id="checkout-modal"
+  class="fixed top-1/2 left-1/2 w-[95%] max-w-5xl bg-white rounded-[40px] shadow-2xl z-[1000] 
+  -translate-x-1/2 -translate-y-1/2 scale-0 transition-all duration-300 overflow-hidden"
+>
+
+  <!-- HEADER -->
+  <div class="flex items-center justify-between px-8 py-6 border-b">
+
+    <h2 class="text-3xl font-bold text-orange-500">
+      Checkout Pesanan
+    </h2>
+
+    <button 
+      id="close-checkout"
+      class="text-4xl text-gray-400 hover:text-red-500"
+    >
+      ×
+    </button>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="grid lg:grid-cols-2">
+
+    <!-- LEFT -->
+    <div class="p-8 border-r">
+
+      <h3 class="text-2xl font-bold mb-6">
+        Produk Dipilih
+      </h3>
+
+      <div 
+        id="checkout-items"
+        class="space-y-5 max-h-[400px] overflow-y-auto pr-2"
+      >
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="p-8 bg-orange-50">
+
+      <h3 class="text-2xl font-bold mb-6">
+        Detail Pengiriman
+      </h3>
+
+      <div class="space-y-5">
+
+        <input 
+          type="text"
+          placeholder="Nama Lengkap"
+          class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+        >
+
+        <input 
+          type="text"
+          placeholder="Nomor HP"
+          class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+        >
+
+        <textarea 
+          placeholder="Alamat Lengkap"
+          class="w-full h-32 resize-none border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+        ></textarea>
+
+      </div>
+
+      <!-- TOTAL -->
+      <div class="mt-8 bg-white p-6 rounded-3xl shadow">
+
+        <div class="flex justify-between text-lg mb-3">
+          <span>Total Produk</span>
+          <span id="checkout-total-items">0</span>
+        </div>
+
+        <div class="flex justify-between text-2xl font-bold text-orange-500">
+          <span>Total Bayar</span>
+          <span id="checkout-total-price">
+            Rp0
+          </span>
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+      <button 
+        id="place-order"
+        class="w-full mt-7 bg-orange-500 hover:bg-orange-600 text-white py-5 rounded-2xl text-xl font-semibold shadow-lg transition"
+      >
+        Buat Pesanan
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CART POPUP -->
+<div 
+  id="cart-popup"
+  class="hidden fixed top-24 right-6 bg-orange-500 text-white px-6 py-4 rounded-2xl shadow-2xl z-[9999]"
+>
+  Produk berhasil ditambahkan 🔥
+</div>
+
+<!-- LOGIN MODAL -->
+<div 
+  id="loginModal"
+  class="hidden fixed inset-0 z-[999999]"
+>
+
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <!-- CENTER -->
+  <div class="fixed inset-0 flex items-center justify-center p-4">
+
+    <!-- CARD -->
+    <div class="relative bg-white w-full max-w-md rounded-[35px] p-8 shadow-2xl">
+
+      <!-- CLOSE -->
+      <button 
+        id="closeLogin"
+        class="absolute top-4 right-5 text-3xl text-gray-400 hover:text-red-500"
+      >
+        ×
+      </button>
+
+      <h2 class="text-4xl font-extrabold text-center text-orange-500 mb-8">
+        Login
+      </h2>
+
+      <form class="space-y-5">
+
+        <input 
+          type="email"
+          placeholder="Masukkan Email"
+          class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+        >
+
+        <input 
+          type="password"
+          placeholder="Masukkan Password"
+          class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+        >
+
+        <button 
+          type="submit"
+          class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-2xl font-bold"
+        >
+          Login Sekarang
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
