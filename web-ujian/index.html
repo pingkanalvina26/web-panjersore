@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Panjersore.ID</title>
+  <title>Panjersore.ID — Rasa Juara, Harga Bersahabat</title>
+  <meta name="description" content="Nikmati nasi goreng dan menu favorit Panjersore.ID dengan cita rasa khas Jember." />
+  <meta name="theme-color" content="#17120f" />
 
-  <!-- Tailwind -->
+  <!-- Tailwind CDN cocok untuk demo/proyek belajar; build produksi lebih ringan. -->
+  <link rel="preload" as="image" href="ns.jpg" fetchpriority="high">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font -->
@@ -16,121 +19,76 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 
-<body>
+<body class="bg-[#fffaf5] text-[#24170f] antialiased font-[Poppins] selection:bg-orange-200 selection:text-orange-950">
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-sm">
-
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-    <!-- LOGO -->
-    <div class="flex items-center gap-4">
-      <img src="logo.png" class="w-14 h-14 object-cover">
-      <h1 class="text-2xl font-bold text-orange-500">
-        Panjersore.ID
-      </h1>
-    </div>
-
-    <!-- NAV -->
-    <nav class="hidden md:flex gap-10">
-
-      <a href="#home" class="nav-link relative text-gray-700 font-semibold">
-        Home
-      </a>
-
-      <a href="#products" class="nav-link relative text-gray-700 font-medium">
-        Products
-      </a>
-
-      <a href="#testi" class="nav-link relative text-gray-700 font-medium">
-        Testimonials
-      </a>
-
-      <a href="#contact" class="nav-link relative text-gray-700 font-medium">
-        Contact
-      </a>
-
+<!-- HEADER: refined storefront navigation -->
+<header class="sticky top-0 z-50 border-b border-stone-200/80 bg-[#fffaf5]/95 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+    <a href="#home" class="flex shrink-0 items-center gap-2.5" aria-label="Panjersore.ID beranda">
+      <img src="logo.png" alt="Logo Nasi Goreng Panjer Sore" width="52" height="52" fetchpriority="high" class="h-10 w-10 object-contain sm:h-12 sm:w-12">
+      <span class="leading-tight"><span class="block text-lg font-extrabold tracking-tight text-[#8f3510] sm:text-xl">Panjersore<span class="text-[#d97706]">.ID</span></span><span class="hidden text-[10px] font-semibold uppercase tracking-[.18em] text-stone-500 sm:block">Rasa juara, harga bersahabat</span></span>
+    </a>
+    <nav id="desktop-nav" aria-label="Navigasi utama" class="hidden items-center gap-7 lg:flex">
+      <a href="#home" class="nav-link text-sm font-semibold text-stone-700 transition hover:text-orange-700">Beranda</a>
+      <a href="#products" class="nav-link text-sm font-semibold text-stone-700 transition hover:text-orange-700">Menu</a>
+      <a href="#testi" class="nav-link text-sm font-semibold text-stone-700 transition hover:text-orange-700">Ulasan</a>
+      <a href="#contact" class="nav-link text-sm font-semibold text-stone-700 transition hover:text-orange-700">Kontak</a>
     </nav>
-
-    <!-- RIGHT -->
-      <div class="flex items-center gap-4">
-
-    <!-- SEARCH -->
-      <div class="hidden lg:flex items-center bg-gray-100 px-4 py-2 rounded-full w-60">
-    
-        <i class="fa-solid fa-magnifying-glass text-gray-400 mr-2"></i>
-
-      <input 
-        type="text"
-        placeholder="Search menu..."
-        class="bg-transparent outline-none text-sm w-full"
-      >
-
-      </div>
-
-    <!-- CART -->
-    <div 
-      id="cart-button"
-      class="relative w-12 h-12 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white cursor-pointer transition"
-    >
-
-    <i class="fas fa-shopping-cart"></i>
-
-    <span 
-      id="cart-count"
-      class="absolute -top-1 -right-1 bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center"
-    >
-      0
-    </span>
-
+    <div class="flex items-center gap-2 sm:gap-3">
+      <label class="hidden items-center gap-2 rounded-full border border-stone-200 bg-white px-3.5 py-2.5 transition focus-within:border-orange-400 focus-within:ring-4 focus-within:ring-orange-100 xl:flex" aria-label="Cari menu">
+        <i class="fa-solid fa-magnifying-glass text-sm text-stone-400" aria-hidden="true"></i>
+        <input id="menu-search" type="search" placeholder="Cari menu..." class="w-32 bg-transparent text-sm outline-none placeholder:text-stone-400 2xl:w-40" autocomplete="off">
+      </label>
+      <button type="button" id="cart-button" aria-label="Buka keranjang belanja" class="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#8f3510] text-white shadow-md shadow-orange-950/15 transition hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-200 sm:h-11 sm:w-11">
+        <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><span id="cart-count" class="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-amber-400 px-1 text-[10px] font-bold text-stone-950">0</span>
+      </button>
+      <button type="button" id="loginBtn" class="hidden rounded-full bg-stone-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-800 sm:inline-flex">Akun</button>
+      <button type="button" id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Buka navigasi" class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 text-stone-800 transition hover:bg-orange-50 lg:hidden"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
   </div>
-
-  <!-- LOGIN BUTTON -->
-  <button 
-    type="button"
-    id="loginBtn"
-    class="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-full font-semibold shadow-lg transition"
-  >
-    Login
-  </button>
+  <div id="mobile-menu" class="hidden border-t border-stone-200 bg-[#fffaf5] px-4 pb-4 pt-2 lg:hidden">
+    <label class="mb-3 flex items-center gap-2 rounded-xl border border-stone-200 bg-white px-3 py-2.5"><i class="fa-solid fa-magnifying-glass text-stone-400" aria-hidden="true"></i><input id="mobile-menu-search" type="search" placeholder="Cari menu..." class="w-full bg-transparent text-sm outline-none"></label>
+    <nav class="grid grid-cols-2 gap-2" aria-label="Navigasi seluler"><a href="#home" class="rounded-xl px-3 py-3 text-sm font-semibold hover:bg-orange-50">Beranda</a><a href="#products" class="rounded-xl px-3 py-3 text-sm font-semibold hover:bg-orange-50">Menu</a><a href="#testi" class="rounded-xl px-3 py-3 text-sm font-semibold hover:bg-orange-50">Ulasan</a><a href="#contact" class="rounded-xl px-3 py-3 text-sm font-semibold hover:bg-orange-50">Kontak</a><button type="button" id="mobile-login-btn" class="col-span-2 rounded-xl bg-stone-900 px-3 py-3 text-sm font-semibold text-white">Masuk ke Akun</button></nav>
   </div>
-  </header>
+</header>
 
 <!-- HERO -->
 <section 
   id="home"
-  class="h-screen bg-cover bg-center relative flex items-center"
+  class="min-h-[620px] h-[88svh] max-h-[900px] bg-cover bg-center relative flex items-center overflow-hidden"
   style="background-image:url('ns.jpg')"
 >
 
-  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[#160d08]/90 via-[#160d08]/65 to-[#160d08]/15"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-[#160d08]/45 via-transparent to-black/10"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full py-16">
 
     <div class="max-w-2xl text-white fade-up">
+      <span class="inline-flex items-center gap-2 rounded-full border border-orange-200/30 bg-white/10 px-4 py-2 text-xs sm:text-sm font-medium tracking-wide text-orange-100 backdrop-blur-md mb-6"><span class="h-2 w-2 rounded-full bg-orange-400"></span> Rasa khas, dibuat saat dipesan</span>
 
-      <p class="text-orange-300 text-lg mb-3">
-        Welcome To Panjersore.ID
+      <p class="text-orange-300 text-base sm:text-lg mb-3 font-semibold tracking-wide">
+        WARUNG NASI GORENG • JEMBER
       </p>
 
-      <h1 class="text-6xl font-extrabold leading-tight">
-        Nasi Goreng <br>
-        Panjersore 🔥
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight">
+        Rasa Hangat, <br>
+        Bikin Balik Lagi.
       </h1>
 
-      <p class="mt-6 text-lg text-gray-200 leading-8">
-        Nikmati nasi goreng premium dengan cita rasa khas,
-        topping melimpah dan harga yang ramah di kantong.
+      <p class="mt-6 text-base sm:text-lg text-gray-200 leading-8 max-w-xl">
+        Dimasak saat dipesan, kaya bumbu, dan disajikan hangat. Temukan menu favoritmu untuk makan malam yang lebih istimewa.
       </p>
 
-      <div class="flex gap-5 mt-">
+      <div class="flex flex-wrap gap-4 mt-8">
 
         <a
           href="#products"
-          class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-full font-semibold shadow-xl transition text-right items-center justify-between"
+          class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 px-7 sm:px-8 py-4 rounded-full font-bold shadow-xl shadow-orange-950/25 transition duration-300 hover:-translate-y-1"
         >
-          Lihat Menu
+          Jelajahi Menu <i class="fa-solid fa-arrow-right"></i>
         </a>
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 border border-white/35 hover:border-orange-300 hover:bg-white/10 px-7 sm:px-8 py-4 rounded-full font-semibold transition">Hubungi Kami</a>
 
       </div>
 
@@ -142,10 +100,10 @@
 
 
 <!-- SECTION -->
-<section class="min-h-screen flex items-center justify-center px-4 py-10">
+<section class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-24 bg-[#fffaf5]">
 
   <!-- CONTAINER -->
-  <div class="w-full max-w-6xl bg-[#ece4dc] rounded-[30px] px-6 md:px-12 py-12 relative overflow-hidden">
+  <div class="w-full max-w-7xl bg-[#f2e7dc] rounded-[28px] sm:rounded-[40px] px-5 sm:px-8 md:px-12 py-10 sm:py-14 relative overflow-hidden shadow-[0_24px_70px_rgba(77,43,20,0.08)] border border-white">
 
     <!-- TITLE -->
     <div class="text-center">
@@ -174,12 +132,11 @@
           <div>
 
             <h3 class="text-xl md:text-2xl font-bold text-[#1f1111]">
-              Pengiriman Hari Berikutnya
+              Dimasak Saat Dipesan
             </h3>
 
             <p class="text-gray-600 mt-2 leading-7 text-sm md:text-base">
-              Pesan hari ini, nikmati makanan 
-              segar dan lezat keesokan harinya.
+              Setiap porsi disiapkan hangat setelah pesanan dibuat.
             </p>
 
           </div>
@@ -214,6 +171,7 @@
         <!-- FOOD IMAGE -->
         <img 
           src="nsigrng.png"
+          alt="Ilustrasi menu nasi goreng Panjer Sore" loading="lazy"
           class="w-full max-w-[320px] md:max-w-[420px] object-cover rounded-full food-shadow"
         >
 
@@ -236,12 +194,11 @@
           <div>
 
             <h3 class="text-xl md:text-2xl font-bold text-[#1f1111]">
-              Pembayaran Online Aman
+              Pemesanan Praktis
             </h3>
 
             <p class="text-gray-600 mt-2 leading-7 text-sm md:text-base">
-              Transaksi terlindungi untuk pembayaran
-              yang aman dan nyaman.
+              Hubungi kami untuk konfirmasi pesanan dan pembayaran.
             </p>
 
           </div>
@@ -279,9 +236,9 @@
 </section>
 
 <!-- PRODUCTS -->
-<section id="products" class="py-24">
+<section id="products" class="py-20 sm:py-28 bg-white scroll-mt-24">
 
-  <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
 
     <!-- TITLE -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
@@ -289,33 +246,40 @@
       <div>
 
         <p class="text-orange-500 font-semibold text-lg">
-          Best Seller
+          DIBUAT FRESH SETIAP PESANAN
         </p>
 
-        <h2 class="text-5xl font-extrabold text-orange-950 mt-3">
-          Our Popular Menu
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#2b1a10] mt-3">
+          Menu Favorit Pelanggan
         </h2>
 
       </div>
 
     </div>
 
+    <div class="mb-8 flex flex-col gap-4 rounded-2xl border border-stone-100 bg-[#fffaf5] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+      <div><p class="font-semibold text-stone-900">Lagi pengin makan apa?</p><p class="mt-1 text-sm text-stone-500">Cari menu dan pilih favoritmu.</p></div>
+      <label class="flex w-full items-center gap-3 rounded-xl border border-stone-200 bg-white px-4 py-3 focus-within:border-orange-400 focus-within:ring-4 focus-within:ring-orange-100 sm:max-w-sm"><i class="fa-solid fa-magnifying-glass text-stone-400" aria-hidden="true"></i><input id="product-search" type="search" placeholder="Cari nasi goreng, mie..." class="w-full bg-transparent text-sm outline-none" autocomplete="off"></label>
+    </div>
+    <div id="product-empty" class="mb-6 hidden rounded-2xl bg-orange-50 p-6 text-center text-stone-600">Menu tidak ditemukan. Coba kata kunci lain.</div>
+
     <!-- GRID -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div id="product-grid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7">
 
       <!-- CARD -->
-      <div class="product-card relative">
+      <div class="product-card group relative rounded-[30px] transition duration-300 hover:-translate-y-2">
 
-        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+        <div class="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] bg-[#f7e8d9] rounded-full mx-auto flex items-center justify-center shadow-md relative z-20 transition duration-500 group-hover:scale-105">
 
           <img 
             src="nasgor3.jpg"
-            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+            alt="Nasi goreng khas Panjer Sore" loading="lazy"
+            class="product-image w-[155px] h-[155px] sm:w-[175px] sm:h-[175px] rounded-full object-cover border-[6px] border-white shadow-sm"
           >
 
         </div>
 
-        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+        <div class="bg-gradient-to-b from-[#fff7ed] to-[#fffaf5] border border-orange-100/80 rounded-[30px] pt-28 pb-8 px-5 -mt-24 text-center shadow-[0_12px_35px_rgba(78,43,20,0.08)] group-hover:shadow-[0_22px_45px_rgba(78,43,20,0.14)] transition duration-300">
 
           <div class="text-yellow-400 text-xl mb-3">
             ★★★★★
@@ -324,12 +288,9 @@
           <h3 class="text-2xl font-bold text-orange-950">
             Nasi Goreng
           </h3>
+          <p class="mt-2 min-h-10 text-sm leading-6 text-stone-500">Gurih, smoky, dengan bumbu khas.</p>
 
           <div class="flex justify-center gap-3 mt-4 items-center">
-
-            <span class="line-through text-gray-400 text-xl">
-              Rp25K
-            </span>
 
             <span class="text-3xl font-bold text-orange-500">
               Rp20K
@@ -338,11 +299,11 @@
           </div>
 
           <button 
-            class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
+            class="add-cart-btn mt-7 bg-[#b94a16] hover:bg-[#8f3510] transition text-white px-6 py-3 rounded-full shadow-md shadow-orange-900/15 font-semibold"
             data-name="Nasi Goreng"
             data-price="20000"
             >
-             Add To Cart
+             Tambah ke Keranjang
             </button>
 
         </div>
@@ -350,18 +311,19 @@
       </div>
 
       <!-- CARD -->
-      <div class="product-card relative">
+      <div class="product-card group relative rounded-[30px] transition duration-300 hover:-translate-y-2">
 
-        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+        <div class="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] bg-[#f7e8d9] rounded-full mx-auto flex items-center justify-center shadow-md relative z-20 transition duration-500 group-hover:scale-105">
 
           <img 
             src="mawut.jpg"
-            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+            alt="Nasi mawut dengan nasi dan mi" loading="lazy"
+            class="product-image w-[155px] h-[155px] sm:w-[175px] sm:h-[175px] rounded-full object-cover border-[6px] border-white shadow-sm"
           >
 
         </div>
 
-        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+        <div class="bg-gradient-to-b from-[#fff7ed] to-[#fffaf5] border border-orange-100/80 rounded-[30px] pt-28 pb-8 px-5 -mt-24 text-center shadow-[0_12px_35px_rgba(78,43,20,0.08)] group-hover:shadow-[0_22px_45px_rgba(78,43,20,0.14)] transition duration-300">
 
           <div class="text-yellow-400 text-xl mb-3">
             ★★★★★
@@ -370,12 +332,9 @@
           <h3 class="text-2xl font-bold text-orange-950">
             Nasi Mawut
           </h3>
+          <p class="mt-2 min-h-10 text-sm leading-6 text-stone-500">Perpaduan nasi dan mi yang mantap.</p>
 
           <div class="flex justify-center gap-3 mt-4 items-center">
-
-            <span class="line-through text-gray-400 text-xl">
-              Rp35K
-            </span>
 
             <span class="text-3xl font-bold text-orange-500">
               Rp28K
@@ -384,11 +343,11 @@
           </div>
 
           <button 
-            class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
-            data-name="Nasi Seafood"
+            class="add-cart-btn mt-7 bg-[#b94a16] hover:bg-[#8f3510] transition text-white px-6 py-3 rounded-full shadow-md shadow-orange-900/15 font-semibold"
+            data-name="Nasi Mawut"
             data-price="28000"
 >
-  Add To Cart
+  Tambah ke Keranjang
 </button>
 
         </div>
@@ -396,18 +355,19 @@
       </div>
 
       <!-- CARD -->
-      <div class="product-card relative">
+      <div class="product-card group relative rounded-[30px] transition duration-300 hover:-translate-y-2">
 
-        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+        <div class="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] bg-[#f7e8d9] rounded-full mx-auto flex items-center justify-center shadow-md relative z-20 transition duration-500 group-hover:scale-105">
 
           <img 
             src="mie.jpg"
-            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+            alt="Mie goreng spesial" loading="lazy"
+            class="product-image w-[155px] h-[155px] sm:w-[175px] sm:h-[175px] rounded-full object-cover border-[6px] border-white shadow-sm"
           >
 
         </div>
 
-        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+        <div class="bg-gradient-to-b from-[#fff7ed] to-[#fffaf5] border border-orange-100/80 rounded-[30px] pt-28 pb-8 px-5 -mt-24 text-center shadow-[0_12px_35px_rgba(78,43,20,0.08)] group-hover:shadow-[0_22px_45px_rgba(78,43,20,0.14)] transition duration-300">
 
           <div class="text-yellow-400 text-xl mb-3">
             ★★★★★
@@ -416,12 +376,9 @@
           <h3 class="text-2xl font-bold text-orange-950">
             Mie Goreng
           </h3>
+          <p class="mt-2 min-h-10 text-sm leading-6 text-stone-500">Mi berbumbu dengan rasa kaya.</p>
 
           <div class="flex justify-center gap-3 mt-4 items-center">
-
-            <span class="line-through text-gray-400 text-xl">
-              Rp40K
-            </span>
 
             <span class="text-3xl font-bold text-orange-500">
               Rp32K
@@ -430,11 +387,11 @@
           </div>
 
           <button 
-  class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
-  data-name="Nasi Spesial"
+  class="add-cart-btn mt-7 bg-[#b94a16] hover:bg-[#8f3510] transition text-white px-6 py-3 rounded-full shadow-md shadow-orange-900/15 font-semibold"
+  data-name="Mie Goreng"
   data-price="32000"
 >
-  Add To Cart
+  Tambah ke Keranjang
 </button>
 
         </div>
@@ -442,18 +399,19 @@
       </div>
 
       <!-- CARD -->
-      <div class="product-card relative">
+      <div class="product-card group relative rounded-[30px] transition duration-300 hover:-translate-y-2">
 
-        <div class="w-[220px] h-[220px] bg-orange-100 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+        <div class="w-[190px] h-[190px] sm:w-[210px] sm:h-[210px] bg-[#f7e8d9] rounded-full mx-auto flex items-center justify-center shadow-md relative z-20 transition duration-500 group-hover:scale-105">
 
           <img 
             src="kuah.jpg"
-            class="product-image w-[170px] h-[170px] rounded-full object-cover border-8 border-white"
+            alt="Mie kuah hangat" loading="lazy"
+            class="product-image w-[155px] h-[155px] sm:w-[175px] sm:h-[175px] rounded-full object-cover border-[6px] border-white shadow-sm"
           >
 
         </div>
 
-        <div class="bg-gradient-to-b from-orange-100 to-orange-50 rounded-[40px] pt-32 pb-10 px-6 -mt-24 text-center shadow-xl">
+        <div class="bg-gradient-to-b from-[#fff7ed] to-[#fffaf5] border border-orange-100/80 rounded-[30px] pt-28 pb-8 px-5 -mt-24 text-center shadow-[0_12px_35px_rgba(78,43,20,0.08)] group-hover:shadow-[0_22px_45px_rgba(78,43,20,0.14)] transition duration-300">
 
           <div class="text-yellow-400 text-xl mb-3">
             ★★★★★
@@ -462,12 +420,9 @@
           <h3 class="text-2xl font-bold text-orange-950">
             Mie Kuah
           </h3>
+          <p class="mt-2 min-h-10 text-sm leading-6 text-stone-500">Kuah hangat dengan racikan rempah.</p>
 
           <div class="flex justify-center gap-3 mt-4 items-center">
-
-            <span class="line-through text-gray-400 text-xl">
-              Rp30K
-            </span>
 
             <span class="text-3xl font-bold text-orange-500">
               Rp24K
@@ -476,11 +431,11 @@
           </div>
 
          <button 
-  class="add-cart-btn mt-7 bg-orange-500 hover:bg-orange-600 transition text-white px-7 py-3 rounded-full shadow-lg"
-  data-name="Nasi Pedas"
+  class="add-cart-btn mt-7 bg-[#b94a16] hover:bg-[#8f3510] transition text-white px-6 py-3 rounded-full shadow-md shadow-orange-900/15 font-semibold"
+  data-name="Mie Kuah"
   data-price="24000"
 >
-  Add To Cart
+  Tambah ke Keranjang
 </button>
 
         </div>
@@ -493,7 +448,7 @@
 
 </section>
 <!-- PROMO SECTION -->
-<section class="relative mt-28 px-4 overflow-hidden">
+<section class="relative mt-10 sm:mt-16 px-4 sm:px-6 py-16 sm:py-20 overflow-hidden bg-[#fffaf5]">
 
   <!-- BLUR BACKGROUND -->
   <div class="absolute top-0 left-0 w-72 h-72 bg-orange-300/20 blur-3xl rounded-full"></div>
@@ -508,7 +463,7 @@
         Why People Love Our Nasi Goreng
       </p>
 
-      <h2 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight mt-5">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-[#2b1a10] leading-tight mt-5 tracking-tight">
 
         Aroma yang Menggoda, <br>
 
@@ -670,7 +625,7 @@
 </section>
 
 <!-- TESTIMONIAL SECTION -->
-<section id="testi" class="py-28 bg-[#fff8f3] overflow-hidden relative">
+<section id="testi" class="py-20 sm:py-28 bg-[#f8eee5] overflow-hidden relative scroll-mt-20">
 
   <!-- BLUR BACKGROUND -->
   <div class="absolute top-0 left-0 w-72 h-72 bg-orange-200 rounded-full blur-[120px] opacity-40"></div>
@@ -685,7 +640,7 @@
         Customer Review
       </span>
 
-      <h2 class="text-5xl md:text-6xl font-extrabold text-[#2b1105] mt-6 leading-tight">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#2b1105] mt-6 leading-tight tracking-tight">
         Mereka Datang Lagi <br>
         Karena Rasanya Beda 🔥
       </h2>
@@ -879,7 +834,7 @@
 
 <section 
   id="contact" 
-  class="py-14 px-4 md:px-6 bg-[linear-gradient(rgba(120,53,15,.93),rgba(120,53,15,.93)),url('https://www.transparenttextures.com/patterns/arabesque.png')] overflow-x-hidden scroll-smooth"
+  class="py-16 sm:py-20 px-4 md:px-6 bg-[#24170f] overflow-x-hidden scroll-mt-20"
 >
 
   <div class="max-w-7xl mx-auto">
@@ -892,7 +847,7 @@
 
         <!-- IMAGE -->
         <img 
-          src="nasigoreng.png"
+          src="nasigoreng.png" alt="Ilustrasi nasi goreng Panjer Sore" loading="lazy" width="150" height="150"
           class="w-[150px] absolute -top-16 left-1/2 -translate-x-1/2 drop-shadow-2xl z-10"
         >
 
@@ -975,7 +930,7 @@
                   </h4>
 
                   <p class="text-xs text-orange-100">
-                    Pengiriman cepat dan aman sampai tujuan.
+                    Tanyakan opsi pengantaran yang tersedia di area Anda.
                   </p>
                 </div>
 
@@ -990,11 +945,11 @@
 
                 <div>
                   <h4 class="font-semibold">
-                    Rating 4.9/5
+                    Rasa Khas Panjer Sore
                   </h4>
 
                   <p class="text-xs text-orange-100">
-                    Disukai ribuan pelanggan setiap hari 🔥
+                    Rasa khas yang siap menemani harimu.
                   </p>
                 </div>
 
@@ -1146,7 +1101,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-[#111111] text-white pt-14 pb-6 px-4 md:px-6 relative overflow-hidden">
+<footer class="bg-[#17110d] text-white pt-14 pb-6 px-4 md:px-6 relative overflow-hidden">
 
   <!-- BLUR -->
   <div class="absolute top-0 left-0 w-56 h-56 bg-orange-500/10 rounded-full blur-[100px]"></div>
@@ -1163,7 +1118,7 @@
         <div class="flex items-center gap-3 mb-4">
 
           <img 
-            src="logo.png" 
+            src="logo.png" alt="Logo Panjersore.ID" loading="lazy"
             class="w-14 h-14 object-cover rounded-full border-2 border-orange-500"
           >
 
@@ -1293,6 +1248,8 @@
 
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.8766611255023!2d113.4454667!3d-8.215156999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd689611c98ae9b%3A0xc3955e16de8e39c!2sWarung%20Nasi%20Goreng%20Panjer%20Sore!5e0!3m2!1sen!2sus!4v1775659459708!5m2!1sen!2sus"
+            title="Peta lokasi Warung Nasi Goreng Panjer Sore"
+            width="600" height="180"
             class="w-full h-[180px]"
             style="border:0;"
             allowfullscreen=""
@@ -1328,8 +1285,11 @@
 
         <input 
           type="email"
+          id="subscriberEmail"
+          name="email"
           placeholder="Masukkan email..."
-          class="flex-1 bg-transparent px-5 py-4 outline-none text-white text-sm"
+          aria-label="Alamat email untuk info promo"
+          class="min-w-0 flex-1 bg-transparent px-5 py-4 outline-none text-white text-sm"
           required
         >
 
@@ -1341,6 +1301,7 @@
         </button>
 
       </form>
+      <p id="subscribeMessage" role="status" aria-live="polite" class="hidden text-sm text-amber-300">Terima kasih! Email tersimpan di browser ini.</p>
 
     </div>
 
@@ -1378,14 +1339,14 @@
 <!-- CHECKOUT MODAL -->
 <div 
   id="checkout-modal"
-  class="fixed top-1/2 left-1/2 w-[95%] max-w-5xl bg-white rounded-[40px] shadow-2xl z-[1000] 
-  -translate-x-1/2 -translate-y-1/2 scale-0 transition-all duration-300 overflow-hidden"
+  role="dialog" aria-modal="true" aria-labelledby="checkout-title"
+  class="fixed left-1/2 top-1/2 z-[1000] hidden max-h-[92svh] w-[95%] max-w-5xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl bg-white shadow-2xl transition-all duration-300 sm:rounded-[32px]"
 >
 
   <!-- HEADER -->
   <div class="flex items-center justify-between px-8 py-6 border-b">
 
-    <h2 class="text-3xl font-bold text-orange-500">
+    <h2 id="checkout-title" class="text-xl font-bold text-orange-700 sm:text-3xl">
       Checkout Pesanan
     </h2>
 
@@ -1427,19 +1388,19 @@
 
         <input 
           type="text"
-          placeholder="Nama Lengkap"
+          id="customer-name" name="customerName" autocomplete="name" required placeholder="Nama Lengkap"
           class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
         >
 
         <input 
           type="text"
-          placeholder="Nomor HP"
+          id="customer-phone" name="customerPhone" type="tel" autocomplete="tel" required placeholder="Nomor HP / WhatsApp"
           class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
         >
 
         <textarea 
-          placeholder="Alamat Lengkap"
-          class="w-full h-32 resize-none border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+          id="customer-address" name="customerAddress" autocomplete="street-address" required placeholder="Alamat lengkap / catatan ambil sendiri"
+          class="w-full h-28 resize-none border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
         ></textarea>
 
       </div>
@@ -1463,8 +1424,8 @@
 
       <!-- BUTTON -->
       <button 
-        id="place-order"
-        class="w-full mt-7 bg-orange-500 hover:bg-orange-600 text-white py-5 rounded-2xl text-xl font-semibold shadow-lg transition"
+        id="place-order" type="button"
+        class="mt-7 w-full rounded-2xl bg-[#8f3510] py-4 text-base font-semibold text-white shadow-lg transition hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-200 sm:py-5 sm:text-xl"
       >
         Buat Pesanan
       </button>
@@ -1486,6 +1447,7 @@
 <!-- LOGIN MODAL -->
 <div 
   id="loginModal"
+  role="dialog" aria-modal="true" aria-labelledby="login-title"
   class="hidden fixed inset-0 z-[999999]"
 >
 
@@ -1506,19 +1468,21 @@
         ×
       </button>
 
-      <h2 class="text-4xl font-extrabold text-center text-orange-500 mb-8">
-        Login
+      <h2 id="login-title" class="mb-3 text-center text-3xl font-extrabold text-orange-700 sm:text-4xl">
+        Masuk
       </h2>
 
-      <form class="space-y-5">
+      <p class="mb-6 text-center text-sm leading-6 text-stone-500">Fitur akun memerlukan sistem autentikasi server. Form ini hanya demonstrasi tampilan.</p>
+      <form id="loginForm" class="space-y-5">
 
-        <input 
+        <input name="email" required autocomplete="email"
           type="email"
           placeholder="Masukkan Email"
           class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
         >
 
         <input 
+          name="password" required autocomplete="current-password" minlength="6"
           type="password"
           placeholder="Masukkan Password"
           class="w-full border border-orange-200 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
@@ -1532,6 +1496,7 @@
         </button>
 
       </form>
+      <p id="loginMessage" role="status" aria-live="polite" class="mt-4 hidden text-center text-sm text-orange-800"></p>
 
     </div>
 
@@ -1539,7 +1504,7 @@
 
 </div>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
